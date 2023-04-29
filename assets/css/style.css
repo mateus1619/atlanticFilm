@@ -1,0 +1,310 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #191825;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html::-webkit-scrollbar-track {
+  background: #191825;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #000000
+}
+
+.btn-entrar {
+    padding: 7.50px 29.50px;
+}
+
+.container-fluid {
+    margin-bottom: 2%;
+}
+
+/* .content {
+    display: none;
+} */
+
+.content-home-error {
+  color: rgba(255, 255, 255, 0.833);
+}
+.home-error {
+  position: relative;
+  text-align: center;
+}
+
+
+/* Nav Bar */
+.nav-link {
+    font-size: 14px;
+}
+
+.nav-link:focus, .nav-link:hover {
+    --bs-nav-link-hover-color: rgba(155, 134, 31, 0.474);
+}
+
+
+
+/* Carousel */
+
+.carousel-posters {
+    display: inline-block;
+}
+
+.carousel-image {
+    opacity: 0.6;
+}
+
+.carousel-icon-play {
+    position: absolute;
+    left: 47%;
+    font-size: 2.25rem;
+    bottom: 50%;
+    color: white;
+}
+
+.carousel-destacados {
+    margin-bottom: -3px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.carousel-film-name {
+    font-size: 13px;
+}
+
+.carousel-indicators {
+    margin-bottom: 0.4rem;
+}
+
+.carousel-indicators [data-bs-target] {
+    border: 0;
+    height: 4.2px;
+    width: 5px;
+}
+
+.carousel-caption {
+    padding-top: 1.25rem;
+    padding-bottom: 0rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel-indicators [data-bs-target]{
+        transition: opacity .6s ease;
+    }
+
+    .carousel-item {
+        transition: opacity .6s ease;
+    }
+}
+
+
+
+/* Posters */
+
+.btn-poster-more {
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    text-decoration: none;
+    user-select: none;
+    display: inline-block;
+    background-color: #1d3557;
+    color: white;
+}
+
+.siema-item {
+    width: auto !important;
+}
+
+.card {
+    /* width: 11vw; */
+    margin-right: 10px;
+    background-color: transparent;
+}
+
+.img-poster {
+    position: relative;
+}
+
+.multiple-items {
+    user-select: none;
+    overflow: hidden;
+}
+
+.item-poster {
+    display: flex;
+    position: relative;
+}
+
+/* @media only screen and (min-width: 460px) {
+    .siema-item {
+        width: 8.3% !important;
+        margin-right: 30px;
+    }
+    .card {
+        width: 37vw;
+    }
+    .name-poster {
+        font-size: 0.9rem;
+    }
+    .year-poster, .rating-poster, .audio-poster {
+        font-size: 0.7rem !important;
+    }
+}
+@media only screen and (min-width: 560px) {
+    .siema-item {
+        margin-right: 10px;
+    }
+    .card {
+        width: 10rem;
+    }
+    .name-poster {
+        font-size: 1rem !important;
+    }
+    .year-poster, .rating-poster, .audio-poster {
+        font-size: 0.8rem !important;
+    }
+}
+@media only screen and (min-width: 640px) {
+    .siema-item {
+        margin-right: 18px;
+    }
+    .card {
+        width: 12rem;
+    }
+    .name-poster {
+        font-size: 1rem !important;
+    }
+    .year-poster, .rating-poster, .audio-poster {
+        font-size: 0.8rem !important;
+    }
+}
+@media only screen and (min-width: 760px) {
+    .card {
+        width: 10rem;
+    }
+    .siema-item {
+        margin-right: 11px;
+    }
+    .name-poster {
+
+    }
+    .year-poster, .rating-poster, .audio-poster {
+
+    }
+}
+@media only screen and (min-width: 800px) {
+    .card {
+        width: 11rem;
+    }
+    .siema-item {
+        margin-right: 10px;
+    }
+    .name-poster {
+
+    }
+    .year-poster, .rating-poster, .audio-poster {
+
+    }
+}
+@media only screen and (min-width: 840px) {
+    .card {
+        width: 12rem;
+    }
+    .siema-item {
+        margin-right: 11px;
+    }
+    .name-poster {
+
+    }
+    .year-poster, .rating-poster, .audio-poster {
+
+    }
+}
+@media only screen and (min-width: 980px) {
+    .item-poster {
+        height: 27.6vw;
+    }
+    .img-poster {
+        width: 18.7vw;
+    }
+    .name-poster {
+
+    }
+    .year-poster, .rating-poster, .audio-poster {
+
+    }
+}
+@media only screen and (min-width: 1180px) {
+    .item-poster {
+        height: 27vw;
+    }
+    .img-poster {
+        width: 20vw;
+    }
+    .name-poster {
+
+    }
+    .year-poster, .rating-poster, .audio-poster {
+
+    }
+} */
+
+
+.redirect-poster {
+    text-decoration: none;
+    border-radius: 1.5vw;
+    will-change: transform;
+    display: block;
+}
+
+.redirect-poster:link, .redirect-poster:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.redirect-poster::before  {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    color: white;
+    transition: all .3s ease-in-out;
+    background: linear-gradient(0deg,rgba(0,0,0,.9) 0,rgba(0,0,0,.7) 37%,rgba(0,0,0,0) 100%);
+}
+
+.info-poster {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 20;
+    overflow-x: hidden;
+    padding: 12px 12px 6px 12px;
+}
+
+.name-poster {
+    font-weight: 400;
+    font-size: 0.8vw;
+}
+
+.year-poster, .rating-poster, .audio-poster {
+    font-weight: 100;
+    opacity: 0.5;
+    font-size: 0.6vw;
+}
