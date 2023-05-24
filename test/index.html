@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="/assets/packages/plyr-3.7.8/css/plyr.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    
+    <div class="container">
+        <div>
+        <video id="player" playsinline controls data-poster="/assets/images/poster.jpg">
+            <source src="/assets/videos/explore.mp4" type="video/mp4" />
+        </video>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script src="/test/script.js"></script>
+    <script src="/assets/packages/plyr-3.7.8/js/plyr.js"></script>
+
+    <script>
+        const player = new Plyr('#player', {
+            iconUrl: "/assets/packages/plyr-3.7.8/plyr.svg",
+            iconPrefix: "plyr",
+            blankVideo: "/assets/packages/plyr-3.7.8/blank.mp4",
+            seekTime: 10,
+            volume: 1
+        });
+    </script>
+
+
+
+</body>
+</html>
