@@ -2,14 +2,16 @@
 
 namespace App\HTTP\Controller;
 
-use App\Model\Validations\User\ValidateContentName;
+use App\Model\ParseContentName;
 use Core\ReturnCodes;
+use Service\API\GetContent;
+use Service\Enum\ContentType;
 use Laminas\Diactoros\Response\JsonResponse;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use App\Model\Validations\User\ValidateContentName;
 use Psr\Http\Message\ResponseInterface as Response;
-use Service\API\GetMovies;
+use Psr\Http\Message\ServerRequestInterface as Request;
 
-class SearchMovies
+class ResearchAnime
 {
     public function search(Request $req, Response $res): Response
     {
@@ -29,6 +31,10 @@ class SearchMovies
             ]);
         }
 
-        return new JsonResponse(GetMovies::getMovies(rawurlencode($content_name))); // Transform content name in encoded url and return result to user
+
+        return new JsonResponse(GetContent::search(
+            ParseContentName::parse($content_name), // Transform content name in encoded url and lowercase
+            ContentType::TYPE_ANIME) 
+        ); 
     }
 }

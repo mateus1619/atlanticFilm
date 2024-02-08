@@ -5,16 +5,18 @@ namespace Service\API;
 use Core\ReturnCodes;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use Service\Enum\ContentType;
 
-class GetMovies
+class GetContent
 {
     /**
-     * Method to search Movie
+     * Method to search for some content
      *
-     * @param string $movie_name
+     * @param string $content_name
+     * @param ContentType $content_type
      * @return array
      */
-    public static function getMovies(string $movie_name): array
+    public static function search(string $content_name, ContentType $content_type): array
     {
         $client = new Client(['verify' => false]);
 
@@ -22,8 +24,8 @@ class GetMovies
             $response = $client->get(env('HOST_API'), [
                 'query' => [
                     'action' => 'search',
-                    'q' => $movie_name,
-                    't' => 'filmes'
+                    'q' => $content_name,
+                    't' => $content_type->value
                 ]
             ]);
             if ($response->getStatusCode() != 200) {
@@ -37,7 +39,7 @@ class GetMovies
             if (empty($body)) {
                 return [
                     'code' => ReturnCodes::USER_ALERT,
-                    'message' => 'Filme não encontrado'
+                    'message' => 'Conteúdo não encontrado'
                 ];
             }
 
