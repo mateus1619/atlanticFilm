@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Model\API\Movies;
+namespace Service\API;
 
-use App\Model\API\RequestType;
+use Core\ReturnCodes;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 
@@ -14,17 +14,21 @@ class GetMovies
      * @param string $movie_name
      * @return array
      */
-    public function getMovies(string $movie_name): array
+    public static function getMovies(string $movie_name): array
     {
-        $client = new Client([
-            'verify' => false
-        ]);
+        $client = new Client(['verify' => false]);
 
         try {
-            $response = $client->get(RequestType::returnURLParsed($movie_name, 'filmes'));
+            $response = $client->get(env('HOST_API'), [
+                'query' => [
+                    'action' => 'search',
+                    'q' => $movie_name,
+                    't' => 'filmes'
+                ]
+            ]);
             if ($response->getStatusCode() != 200) {
                 return [
-                    'code' => 500,
+                    'code' => ReturnCodes::INTERNAL_API_ERROR,
                     'message' => 'Erro na API'
                 ];
             }
@@ -32,14 +36,14 @@ class GetMovies
             $body = json_decode($response->getBody());
             if (empty($body)) {
                 return [
-                    'code' => 400,
-                    'message' => 'Filmes não encontrado'
+                    'code' => ReturnCodes::USER_ALERT,
+                    'message' => 'Filme não encontrado'
                 ];
             }
 
             return [
                 'code' => 200,
-                'list' => $body->list
+                'data' => $body->list
             ];
         } catch (GuzzleException $e) {
             return [

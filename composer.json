@@ -11,8 +11,13 @@
     ],
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
-        }
+            "App\\": "app/",
+            "Service\\": "service/",
+            "Core\\": "core/"
+        },
+        "files": [
+            "core/Support/HTTP/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -25,7 +30,8 @@
         "guzzlehttp/guzzle": "^7.5",
         "slim/slim": "^4.11",
         "twig/twig": "^3.5",
-        "laminas/laminas-diactoros": "^2.24"
+        "laminas/laminas-diactoros": "^2.24",
+        "vlucas/phpdotenv": "^5.6"
     },
     "require-dev": {
         "pestphp/pest": "^2.4"

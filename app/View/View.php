@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Views;
+namespace App\View;
 
 use Twig\Environment;
 use Twig\Error\LoaderError;
@@ -22,7 +22,7 @@ class View
      */
     public static function render(string $view, array $args = []): string
     {
-        $loader = new FilesystemLoader(__DIR__ . DIRECTORY_SEPARATOR . 'pages' . DIRECTORY_SEPARATOR);
+        $loader = new FilesystemLoader(APP_DIR . DIRECTORY_SEPARATOR . 'pages' . DIRECTORY_SEPARATOR);
         $twig = new Environment($loader);
 
         return $twig->render($view . '.html', $args);

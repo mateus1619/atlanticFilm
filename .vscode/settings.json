@@ -1,0 +1,4 @@
+{
+    "intelephense.telemetry.enabled": false,
+    "explorer.compactFolders": false
+}
