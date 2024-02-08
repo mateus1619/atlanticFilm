@@ -13,6 +13,10 @@
 
 // uses(Tests\TestCase::class)->in('Feature');
 
+use PHPUnit\Framework\TestCase;
+
+uses(TestCase::class)->group('api')->in('API');
+
 /*
 |--------------------------------------------------------------------------
 | Expectations
@@ -23,8 +27,6 @@
 | to assert different things. Of course, you may extend the Expectation API at any time.
 |
 */
-
-use PHPUnit\Framework\TestCase;
 
 expect()->extend('toBeOne', function () {
     return $this->toBe(1);
@@ -45,12 +47,3 @@ function something()
 {
     // ..
 }
-
-// Groups
-uses(TestCase::class)->group('api')->in('Feature');
-
-
-// Hooks
-uses(TestCase::class)->beforeEach(function () {
-    require_once __DIR__ . '/../app/config.php';
-})->group('api')->in('Feature');
