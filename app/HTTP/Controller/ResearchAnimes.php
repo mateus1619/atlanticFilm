@@ -11,7 +11,7 @@ use App\Model\Validations\User\ValidateContentName;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class ResearchAnime
+class ResearchAnimes
 {
     public function search(Request $req, Response $res): Response
     {

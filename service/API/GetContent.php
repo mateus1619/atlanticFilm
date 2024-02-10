@@ -28,12 +28,6 @@ class GetContent
                     't' => $content_type->value
                 ]
             ]);
-            if ($response->getStatusCode() != 200) {
-                return [
-                    'code' => ReturnCodes::INTERNAL_API_ERROR,
-                    'message' => 'Erro na API'
-                ];
-            }
 
             $body = json_decode($response->getBody());
             if (empty($body)) {
@@ -49,8 +43,8 @@ class GetContent
             ];
         } catch (GuzzleException $e) {
             return [
-                'code' => $e->getCode(),
-                'message' => $e->getMessage()
+                'code' => ReturnCodes::INTERNAL_API_ERROR,
+                'message' => 'Erro na API'
             ];
         }
     }
